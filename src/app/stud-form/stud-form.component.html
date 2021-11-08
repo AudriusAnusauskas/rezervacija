@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card mt-5">
+                <div class="card-header">Studentu forma</div>
+                <div class="card-body">
+                    <form [formGroup]='studForm' (ngSubmit)="onSubmit()">
+                        <div class="mb-3">
+                            <label class="form-label">Vardas</label>
+                            <input type="text" class="form-control" formControlName='name'>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Pavarde</label>
+                            <input type="text" class="form-control" formControlName='surname'>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">El. pasto adresas</label>
+                            <input type="text" class="form-control" formControlName='email'>
+                            <span *ngIf="!studForm.get('email').valid && studForm.get('email').touched " class="help-block">Neteisingas el. pastas</span>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Kodas</label>
+                            <input type="text" class="form-control" formControlName='code' >
+                            <span *ngIf="!studForm.get('code').valid && studForm.get('code').touched " class="help-block">Neteisingas kodas</span>
+                        </div>
+                        <button class="btn btn-success">Registruotis</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
